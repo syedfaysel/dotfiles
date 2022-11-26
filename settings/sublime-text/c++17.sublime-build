@@ -1,12 +1,15 @@
-
+// this build is suggested by luv (and modified by @syedrajo20)
 {
-	"shell_cmd" : ["g++ -std=c++17 $file_name -o $file_base_name && timeout 4s ./$file_base_name</home/syedrajo20/input.txt>/home/syedrajo20/output.txt"], 
-	"selector" : "source.c++",
-	// "shell": true,
-	"working_dir" : "$file_path"
+	"cmd" : ["g++ -std=c++17 $file_name -o $file_base_name.exe && timeout 5s ./$file_base_name.exe</home/syedrajo20/input.txt>/home/syedrajo20/output.txt"],
+	"shell": true,
+	"file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+	"working_dir" : "$file_path",
+	"selector":  "source.c++"
 }
 
 
+
+// This build setting is for windows (youKnowWho)
 // {
 //     "shell_cmd": "g++ -Wl,-stack=268435456 -std=c++17 ${file} -o ${file_path}/${file_base_name} && ${file_path}/${file_base_name} < $HOME/input.txt > $HOME/output.txt",
 //     "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
